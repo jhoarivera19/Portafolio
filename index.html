@@ -1,0 +1,541 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Portafolio profesional de Jhoana Rivera, estudiante de Administración Tecnológica del ITM.">
+
+    <title>Jhoana Rivera | Portafolio Profesional</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #eee6fa;
+            color: #352747;
+            line-height: 1.7;
+        }
+
+        /* ENCABEZADO */
+        header {
+            background: #563879;
+            color: white;
+            padding: 18px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        header h2 {
+            color: #e4d2ff;
+            font-size: 24px;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #dfc3ff;
+        }
+
+        /* BOTÓN PDF */
+        .pdf-button {
+            background: #e0c5ff;
+            color: #43275f;
+            padding: 11px 17px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            border: 2px solid #e0c5ff;
+            cursor: pointer;
+            transition: 0.3s;
+            white-space: nowrap;
+        }
+
+        .pdf-button:hover {
+            background: white;
+            border-color: white;
+            transform: translateY(-2px);
+        }
+
+        /* PRESENTACIÓN */
+        .hero {
+            min-height: 450px;
+            background: linear-gradient(120deg, #563879, #8865b5);
+            color: white;
+            padding: 100px 8%;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #e5ceff;
+        }
+
+        .hero p {
+            font-size: 19px;
+            color: #f0e8fa;
+            margin-bottom: 25px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 25px;
+            background: #e0c5ff;
+            color: #43275f;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background: white;
+            transform: translateY(-3px);
+        }
+
+        section {
+            padding: 70px 8%;
+        }
+
+        /* TÍTULOS */
+        .section-title {
+            font-size: 30px;
+            color: #563879;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 65px;
+            height: 4px;
+            background: #a77bd8;
+            margin: 10px auto;
+            border-radius: 5px;
+        }
+
+        /* SOBRE MÍ */
+        .about {
+            background: #f9f6ff;
+        }
+
+        .about-content {
+            max-width: 950px;
+            margin: auto;
+            text-align: justify;
+            font-size: 17px;
+            color: #51445f;
+            background: white;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(86, 56, 121, 0.08);
+            border-left: 5px solid #a77bd8;
+        }
+
+        /* FORMACIÓN */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 25px;
+            margin-top: 35px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(86, 56, 121, 0.08);
+            border-top: 4px solid #a77bd8;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            color: #68468d;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #62576d;
+        }
+
+        /* EXPERIENCIA */
+        .experience {
+            background: #f9f6ff;
+        }
+
+        .experience-box {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 5px solid #a77bd8;
+            box-shadow: 0 4px 15px rgba(86, 56, 121, 0.08);
+        }
+
+        .experience-box h3 {
+            color: #563879;
+            font-size: 22px;
+        }
+
+        /* CONTACTO */
+        .contact {
+            background: #563879;
+            color: white;
+            text-align: center;
+        }
+
+        .contact .section-title {
+            color: white;
+        }
+
+        .contact-info {
+            margin-top: 25px;
+            font-size: 17px;
+        }
+
+        .contact-info p {
+            margin: 12px;
+        }
+
+        .contact-info a {
+            color: #e5ceff;
+            text-decoration: none;
+        }
+
+        /* PIE DE PÁGINA */
+        footer {
+            background: #39244f;
+            color: #e6d9f3;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+
+        /* DISEÑO RESPONSIVO */
+        @media (max-width: 850px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .header-right {
+                justify-content: center;
+            }
+
+            nav a {
+                margin: 5px;
+                display: inline-block;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero {
+                padding: 75px 7%;
+            }
+
+            .hero h1 {
+                font-size: 35px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            section {
+                padding: 50px 7%;
+            }
+
+            .about-content {
+                padding: 22px;
+            }
+
+            .pdf-button {
+                display: inline-block;
+            }
+        }
+
+        /* CONFIGURACIÓN DEL PDF */
+        @page {
+            size: A4;
+            margin: 15mm;
+        }
+
+        @media print {
+            body {
+                background: white;
+                color: #352747;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            header nav,
+            .pdf-button,
+            .button {
+                display: none !important;
+            }
+
+            header {
+                padding: 15px;
+            }
+
+            section,
+            .hero {
+                padding: 30px;
+            }
+
+            .hero {
+                min-height: auto;
+            }
+
+            .card,
+            .experience-box,
+            .about-content {
+                break-inside: avoid;
+                box-shadow: none;
+            }
+
+            footer {
+                break-inside: avoid;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+    <header>
+
+        <h2>JR | Portafolio</h2>
+
+        <div class="header-right">
+
+            <nav>
+                <a href="#inicio">Inicio</a>
+                <a href="#sobre-mi">Sobre mí</a>
+                <a href="#formacion">Formación</a>
+                <a href="#experiencia">Experiencia</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+
+            <!-- BOTÓN PARA DESCARGAR PDF -->
+            <button class="pdf-button" onclick="descargarPDF()">
+                ↓ Descargar portafolio PDF
+            </button>
+
+        </div>
+
+    </header>
+
+    <!-- PRESENTACIÓN -->
+    <section class="hero" id="inicio">
+
+        <div class="hero-content">
+
+            <h1>Hola, soy <span>Jhoana Rivera</span></h1>
+
+            <p>
+                Administradora Tecnológica en formación,
+                estudiante de sexto semestre del ITM y
+                Analista de Planeación.
+            </p>
+
+            <a href="#sobre-mi" class="button">
+                Conoce mi perfil
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- SOBRE MÍ -->
+    <section class="about" id="sobre-mi">
+
+        <h2 class="section-title">Sobre mí</h2>
+
+        <div class="about-content">
+
+            <p>
+                Estudiante de sexto semestre de la institución
+                universitaria ITM, ciudadano global que cuenta
+                con formación integral, con cualidades éticas
+                y de autonomía para su desarrollo profesional,
+                con capacidad para planear, organizar, dirigir,
+                controlar y evaluar los procesos de gestión del
+                conocimiento, tecnología e innovación,
+                alineándolos con la estrategia para el logro de
+                los objetivos de las organizaciones en las que
+                interviene, lo cual le permite tomar decisiones
+                en contextos complejos, dinámicos e inciertos.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- FORMACIÓN -->
+    <section id="formacion">
+
+        <h2 class="section-title">Formación académica</h2>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h3>Administración Tecnológica</h3>
+
+                <p>
+                    Institución Universitaria ITM.
+                    <br><br>
+                    Sexto semestre en curso.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Desarrollo profesional</h3>
+
+                <p>
+                    Formación orientada a integrar
+                    conocimientos administrativos,
+                    tecnológicos y organizacionales para
+                    contribuir al desarrollo empresarial.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- EXPERIENCIA -->
+    <section class="experience" id="experiencia">
+
+        <h2 class="section-title">Experiencia profesional</h2>
+
+        <div class="experience-box">
+
+            <h3>Analista de Planeación</h3>
+
+            <p>
+                Experiencia en el área de planeación,
+                con enfoque en el entorno administrativo
+                y organizacional.
+            </p>
+
+            <br>
+
+            <p>
+                Mi perfil profesional combina la experiencia
+                laboral con la formación académica en
+                Administración Tecnológica.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="contact" id="contacto">
+
+        <h2 class="section-title">Contacto</h2>
+
+        <p>
+            Estoy abierta a nuevas oportunidades,
+            conexiones profesionales y espacios
+            de aprendizaje.
+        </p>
+
+        <div class="contact-info">
+
+            <p>
+                <strong>Nombre:</strong> Jhoana Rivera
+            </p>
+
+            <p>
+                <strong>Teléfono:</strong>
+                <a href="tel:3113663896">
+                    311 366 3896
+                </a>
+            </p>
+
+            <p>
+                <strong>Correo electrónico:</strong>
+                <a href="mailto:jhoanarivera1139507@correo.itm.edu.co">
+                    jhoanarivera1139507@correo.itm.edu.co
+                </a>
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+
+        <p>
+            © 2026 Jhoana Rivera.
+            Portafolio Profesional.
+        </p>
+
+        <p>
+            Administración Tecnológica | ITM
+        </p>
+
+    </footer>
+
+    <!-- FUNCIÓN PARA GENERAR PDF -->
+    <script>
+        function descargarPDF() {
+            window.print();
+        }
+    </script>
+
+</body>
+</html>
