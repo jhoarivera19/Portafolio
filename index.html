@@ -1,37 +1,31 @@
 
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta name="description" content="Portafolio profesional de Jhoana Rivera, estudiante de Administración Tecnológica del ITM.">
-
-    <title>Jhoana Rivera | Portafolio Profesional</title>
+    <title>Portafolio Profesional | Jhoana Rivera</title>
 
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Arial, sans-serif;
-        }
-
-        html {
             scroll-behavior: smooth;
         }
 
         body {
+            font-family: Arial, Helvetica, sans-serif;
             background: #eee6fa;
             color: #352747;
-            line-height: 1.7;
+            line-height: 1.6;
         }
 
-        /* ENCABEZADO */
         header {
             background: #563879;
             color: white;
-            padding: 18px 5%;
+            padding: 18px 7%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -40,502 +34,415 @@
         }
 
         header h2 {
-            color: #e4d2ff;
-            font-size: 24px;
+            font-size: 22px;
         }
 
-        .header-right {
+        nav {
             display: flex;
-            align-items: center;
-            gap: 20px;
+            gap: 18px;
             flex-wrap: wrap;
         }
 
         nav a {
             color: white;
             text-decoration: none;
-            margin-left: 15px;
             font-size: 14px;
-            transition: 0.3s;
         }
 
         nav a:hover {
-            color: #dfc3ff;
+            color: #e0c5ff;
         }
 
-        /* BOTÓN PDF */
         .pdf-button {
-            background: #e0c5ff;
-            color: #43275f;
-            padding: 11px 17px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 14px;
-            border: 2px solid #e0c5ff;
-            cursor: pointer;
-            transition: 0.3s;
-            white-space: nowrap;
-        }
-
-        .pdf-button:hover {
-            background: white;
-            border-color: white;
-            transform: translateY(-2px);
-        }
-
-        /* PRESENTACIÓN */
-        .hero {
-            min-height: 450px;
-            background: linear-gradient(120deg, #563879, #8865b5);
+            background: #a77bd8;
             color: white;
-            padding: 100px 8%;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #563879, #8865b5);
+            color: white;
+            text-align: center;
+            padding: 55px 20px;
+        }
+
+        .photo-frame {
+            width: 190px;
+            height: 190px;
+            margin: 0 auto 18px;
+            border: 6px solid #e0c5ff;
+            border-radius: 50%;
+            overflow: hidden;
+            background: #eee6fa;
             display: flex;
             align-items: center;
+            justify-content: center;
         }
 
-        .hero-content {
-            max-width: 800px;
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .hero h1 {
-            font-size: 48px;
-            margin-bottom: 15px;
-        }
-
-        .hero h1 span {
-            color: #e5ceff;
+            font-size: 34px;
+            margin-bottom: 8px;
         }
 
         .hero p {
-            font-size: 19px;
-            color: #f0e8fa;
-            margin-bottom: 25px;
+            font-size: 17px;
         }
 
-        .button {
-            display: inline-block;
-            padding: 12px 25px;
-            background: #e0c5ff;
-            color: #43275f;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 8px;
-            transition: 0.3s;
-            border: none;
-            cursor: pointer;
-        }
-
-        .button:hover {
-            background: white;
-            transform: translateY(-3px);
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 30px 20px;
         }
 
         section {
-            padding: 70px 8%;
-        }
-
-        /* TÍTULOS */
-        .section-title {
-            font-size: 30px;
-            color: #563879;
+            background: white;
             margin-bottom: 25px;
-            text-align: center;
+            padding: 28px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(70, 40, 100, 0.08);
         }
 
-        .section-title::after {
-            content: "";
-            display: block;
-            width: 65px;
-            height: 4px;
-            background: #a77bd8;
-            margin: 10px auto;
-            border-radius: 5px;
-        }
-
-        /* SOBRE MÍ */
-        .about {
-            background: #f9f6ff;
-        }
-
-        .about-content {
-            max-width: 950px;
-            margin: auto;
-            text-align: justify;
-            font-size: 17px;
-            color: #51445f;
-            background: white;
-            padding: 35px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(86, 56, 121, 0.08);
-            border-left: 5px solid #a77bd8;
-        }
-
-        /* FORMACIÓN */
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-            gap: 25px;
-            margin-top: 35px;
-        }
-
-        .card {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(86, 56, 121, 0.08);
-            border-top: 4px solid #a77bd8;
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        .card h3 {
-            color: #68468d;
-            margin-bottom: 12px;
-        }
-
-        .card p {
-            color: #62576d;
-        }
-
-        /* EXPERIENCIA */
-        .experience {
-            background: #f9f6ff;
-        }
-
-        .experience-box {
-            max-width: 800px;
-            margin: auto;
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            border-left: 5px solid #a77bd8;
-            box-shadow: 0 4px 15px rgba(86, 56, 121, 0.08);
-        }
-
-        .experience-box h3 {
+        section h2 {
             color: #563879;
-            font-size: 22px;
+            margin-bottom: 18px;
+            border-bottom: 2px solid #e5ceff;
+            padding-bottom: 8px;
         }
 
-        /* CONTACTO */
-        .contact {
-            background: #563879;
-            color: white;
-            text-align: center;
+        section h3 {
+            color: #76519e;
+            margin-bottom: 6px;
         }
 
-        .contact .section-title {
-            color: white;
+        .item {
+            margin-bottom: 20px;
         }
 
-        .contact-info {
-            margin-top: 25px;
-            font-size: 17px;
+        .item:last-child {
+            margin-bottom: 0;
         }
 
-        .contact-info p {
-            margin: 12px;
-        }
-
-        .contact-info a {
-            color: #e5ceff;
-            text-decoration: none;
-        }
-
-        /* PIE DE PÁGINA */
-        footer {
-            background: #39244f;
-            color: #e6d9f3;
-            text-align: center;
-            padding: 20px;
+        .date {
+            color: #8865b5;
+            font-weight: bold;
             font-size: 14px;
         }
 
-        /* DISEÑO RESPONSIVO */
-        @media (max-width: 850px) {
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 18px;
+        }
+
+        .card {
+            background: #f5effc;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 5px solid #a77bd8;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+        }
+
+        ul {
+            padding-left: 22px;
+            margin-top: 8px;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            color: #563879;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 5px 15px 5px 0;
+        }
+
+        .social-links a:hover {
+            text-decoration: underline;
+        }
+
+        .contact p {
+            margin-bottom: 8px;
+        }
+
+        footer {
+            background: #563879;
+            color: white;
+            text-align: center;
+            padding: 22px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 700px) {
             header {
                 flex-direction: column;
                 text-align: center;
             }
 
-            .header-right {
+            nav {
                 justify-content: center;
             }
 
-            nav a {
-                margin: 5px;
-                display: inline-block;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .hero {
-                padding: 75px 7%;
-            }
-
             .hero h1 {
-                font-size: 35px;
-            }
-
-            .hero p {
-                font-size: 16px;
+                font-size: 27px;
             }
 
             section {
-                padding: 50px 7%;
+                padding: 20px;
             }
-
-            .about-content {
-                padding: 22px;
-            }
-
-            .pdf-button {
-                display: inline-block;
-            }
-        }
-
-        /* CONFIGURACIÓN DEL PDF */
-        @page {
-            size: A4;
-            margin: 15mm;
         }
 
         @media print {
+            @page {
+                size: A4;
+                margin: 15mm;
+            }
+
             body {
                 background: white;
-                color: #352747;
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
             }
 
             header nav,
-            .pdf-button,
-            .button {
+            .pdf-button {
                 display: none !important;
             }
 
             header {
-                padding: 15px;
-            }
-
-            section,
-            .hero {
-                padding: 30px;
+                padding: 10px;
             }
 
             .hero {
-                min-height: auto;
+                padding: 25px 10px;
             }
 
-            .card,
-            .experience-box,
-            .about-content {
-                break-inside: avoid;
+            .container {
+                padding: 15px 0;
+            }
+
+            section {
                 box-shadow: none;
+                border: 1px solid #eee;
+                break-inside: avoid;
+                margin-bottom: 15px;
             }
 
-            footer {
-                break-inside: avoid;
+            a {
+                color: inherit;
             }
         }
-
     </style>
 </head>
 
 <body>
 
-    <!-- ENCABEZADO -->
     <header>
-
         <h2>JR | Portafolio</h2>
 
-        <div class="header-right">
+        <nav>
+            <a href="#sobre-mi">Sobre mí</a>
+            <a href="#formacion">Formación</a>
+            <a href="#experiencia">Experiencia</a>
+            <a href="#proyectos">Proyectos</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
 
-            <nav>
-                <a href="#inicio">Inicio</a>
-                <a href="#sobre-mi">Sobre mí</a>
-                <a href="#formacion">Formación</a>
-                <a href="#experiencia">Experiencia</a>
-                <a href="#contacto">Contacto</a>
-            </nav>
-
-            <!-- BOTÓN PARA DESCARGAR PDF -->
-            <button class="pdf-button" onclick="descargarPDF()">
-                ↓ Descargar portafolio PDF
-            </button>
-
-        </div>
-
+        <button class="pdf-button" onclick="window.print()">
+            ↓ Descargar PDF
+        </button>
     </header>
 
-    <!-- PRESENTACIÓN -->
-    <section class="hero" id="inicio">
-
-        <div class="hero-content">
-
-            <h1>Hola, soy <span>Jhoana Rivera</span></h1>
-
-            <p>
-                Administradora Tecnológica en formación,
-                estudiante de sexto semestre del ITM y
-                Analista de Planeación.
-            </p>
-
-            <a href="#sobre-mi" class="button">
-                Conoce mi perfil
-            </a>
-
+    <div class="hero">
+        <div class="photo-frame">
+            <img src="foto.jpg"
+                 alt="Fotografía de Jhoana Rivera"
+                 onerror="this.style.display='none';">
         </div>
 
-    </section>
+        <h1>Jhoana Rivera</h1>
+        <p>Estudiante de Administración Tecnológica</p>
+        <p>Quinto semestre | Institución Universitaria ITM</p>
+    </div>
 
-    <!-- SOBRE MÍ -->
-    <section class="about" id="sobre-mi">
+    <main class="container">
 
-        <h2 class="section-title">Sobre mí</h2>
-
-        <div class="about-content">
+        <section id="sobre-mi">
+            <h2>Sobre mí</h2>
 
             <p>
-                Estudiante de sexto semestre de la institución
-                universitaria ITM, ciudadano global que cuenta
-                con formación integral, con cualidades éticas
-                y de autonomía para su desarrollo profesional,
-                con capacidad para planear, organizar, dirigir,
-                controlar y evaluar los procesos de gestión del
-                conocimiento, tecnología e innovación,
-                alineándolos con la estrategia para el logro de
-                los objetivos de las organizaciones en las que
-                interviene, lo cual le permite tomar decisiones
-                en contextos complejos, dinámicos e inciertos.
+                Estudiante de quinto semestre de la institución universitaria ITM,
+                ciudadano global que cuenta con formación integral, con cualidades
+                éticas y de autonomía para su desarrollo profesional, con capacidad
+                para planear, organizar, dirigir, controlar y evaluar los procesos
+                de gestión del conocimiento, tecnología e innovación, alineándolos
+                con la estrategia para el logro de los objetivos de las organizaciones
+                en las que interviene, lo cual le permite tomar decisiones en contextos
+                complejos, dinámicos e inciertos.
             </p>
+        </section>
 
-        </div>
+        <section id="formacion">
+            <h2>Formación académica y profesional</h2>
 
-    </section>
-
-    <!-- FORMACIÓN -->
-    <section id="formacion">
-
-        <h2 class="section-title">Formación académica</h2>
-
-        <div class="cards">
-
-            <div class="card">
-
+            <div class="item">
                 <h3>Administración Tecnológica</h3>
-
-                <p>
-                    Institución Universitaria ITM.
-                    <br><br>
-                    Sexto semestre en curso.
-                </p>
-
+                <p>Institución Universitaria ITM</p>
+                <p class="date">Quinto semestre | En curso</p>
             </div>
 
-            <div class="card">
-
-                <h3>Desarrollo profesional</h3>
-
-                <p>
-                    Formación orientada a integrar
-                    conocimientos administrativos,
-                    tecnológicos y organizacionales para
-                    contribuir al desarrollo empresarial.
-                </p>
-
+            <div class="item">
+                <h3>Auxiliar Farmacéutica</h3>
+                <p>Ecosesa</p>
+                <p class="date">2014</p>
             </div>
 
-        </div>
+            <div class="item">
+                <h3>Auxiliar Administrativo</h3>
+                <p>Cesde</p>
+                <p class="date">2019</p>
+            </div>
+        </section>
 
-    </section>
+        <section id="experiencia">
+            <h2>Experiencia profesional</h2>
 
-    <!-- EXPERIENCIA -->
-    <section class="experience" id="experiencia">
+            <div class="item">
+                <h3>Analista de Compras</h3>
+                <p>Vitralvidrios</p>
+                <p class="date">2021 – 2026</p>
+                <p>
+                    Experiencia en procesos de compras, apoyo a la gestión
+                    administrativa, seguimiento de requerimientos y coordinación
+                    de actividades relacionadas con el abastecimiento de la empresa.
+                </p>
+            </div>
 
-        <h2 class="section-title">Experiencia profesional</h2>
+            <div class="item">
+                <h3>Administradora de Punto de Venta</h3>
+                <p>Alumundo</p>
+                <p class="date">2017 – 2021</p>
+                <p>
+                    Experiencia en administración de punto de venta, organización
+                    de actividades comerciales, atención al cliente y apoyo
+                    a los procesos operativos y administrativos.
+                </p>
+            </div>
+        </section>
 
-        <div class="experience-box">
+        <section id="proyectos">
+            <h2>Gestión de proyectos</h2>
 
-            <h3>Analista de Planeación</h3>
+            <div class="cards">
 
-            <p>
-                Experiencia en el área de planeación,
-                con enfoque en el entorno administrativo
-                y organizacional.
-            </p>
+                <div class="card">
+                    <h3>Presente</h3>
+                    <p>
+                        Actualmente me encuentro fortaleciendo mis conocimientos
+                        académicos y profesionales mediante la formación en
+                        Administración Tecnológica y la experiencia laboral.
+                    </p>
 
-            <br>
+                    <ul>
+                        <li>Desarrollar competencias administrativas y tecnológicas.</li>
+                        <li>Fortalecer habilidades de planeación y organización.</li>
+                        <li>Aplicar los conocimientos adquiridos en el entorno laboral.</li>
+                    </ul>
 
-            <p>
-                Mi perfil profesional combina la experiencia
-                laboral con la formación académica en
-                Administración Tecnológica.
-            </p>
+                    <p><strong>Responsable:</strong> Jhoana Rivera.</p>
+                </div>
 
-        </div>
+                <div class="card">
+                    <h3>Pasado</h3>
+                    <p>
+                        Mi experiencia laboral en Alumundo y Vitralvidrios me ha
+                        permitido adquirir conocimientos en administración,
+                        compras y procesos organizacionales.
+                    </p>
 
-    </section>
+                    <ul>
+                        <li>Experiencia en administración de punto de venta.</li>
+                        <li>Experiencia como analista de compras.</li>
+                        <li>Desarrollo de habilidades de organización y responsabilidad.</li>
+                        <li>Fortalecimiento de la toma de decisiones.</li>
+                    </ul>
+                </div>
 
-    <!-- CONTACTO -->
-    <section class="contact" id="contacto">
+                <div class="card">
+                    <h3>Futuro</h3>
+                    <p>
+                        Mi propósito es consolidar mi perfil profesional,
+                        culminar mi formación académica y aportar al crecimiento
+                        de las organizaciones mediante la innovación y la mejora
+                        de procesos.
+                    </p>
 
-        <h2 class="section-title">Contacto</h2>
+                    <ul>
+                        <li><strong>Corto plazo:</strong> avanzar en mi formación académica.</li>
+                        <li><strong>Mediano plazo:</strong> fortalecer mis competencias en gestión de proyectos.</li>
+                        <li><strong>Largo plazo:</strong> alcanzar nuevas oportunidades de crecimiento profesional.</li>
+                    </ul>
+                </div>
 
-        <p>
-            Estoy abierta a nuevas oportunidades,
-            conexiones profesionales y espacios
-            de aprendizaje.
-        </p>
+            </div>
+        </section>
 
-        <div class="contact-info">
+        <section id="certificados">
+            <h2>Certificados y cursos</h2>
 
-            <p>
-                <strong>Nombre:</strong> Jhoana Rivera
-            </p>
+            <div class="item">
+                <h3>Curso de 50 horas COCOLA</h3>
+                <p>Formación complementaria.</p>
+            </div>
+        </section>
 
-            <p>
-                <strong>Teléfono:</strong>
-                <a href="tel:3113663896">
-                    311 366 3896
+        <section id="redes">
+            <h2>Redes sociales</h2>
+
+            <div class="social-links">
+                <a href="https://www.instagram.com/aniitariivera/"
+                   target="_blank" rel="noopener noreferrer">
+                    Instagram: @aniitariivera
                 </a>
-            </p>
 
+                <a href="https://www.facebook.com/"
+                   target="_blank" rel="noopener noreferrer">
+                    Facebook: Jhoana Rivera
+                </a>
+            </div>
+        </section>
+
+        <section id="contacto" class="contact">
+            <h2>Contacto</h2>
+
+            <p><strong>Teléfono:</strong> 311 366 3896</p>
             <p>
                 <strong>Correo electrónico:</strong>
-                <a href="mailto:jhoanarivera1139507@correo.itm.edu.co">
-                    jhoanarivera1139507@correo.itm.edu.co
-                </a>
+                jhoanarivera1139507@correo.itm.edu.co
             </p>
+        </section>
 
-        </div>
+    </main>
 
-    </section>
-
-    <!-- PIE DE PÁGINA -->
     <footer>
-
-        <p>
-            © 2026 Jhoana Rivera.
-            Portafolio Profesional.
-        </p>
-
-        <p>
-            Administración Tecnológica | ITM
-        </p>
-
+        <p>© 2026 Jhoana Rivera | Portafolio Profesional</p>
     </footer>
-
-    <!-- FUNCIÓN PARA GENERAR PDF -->
-    <script>
-        function descargarPDF() {
-            window.print();
-        }
-    </script>
 
 </body>
 </html>
+
